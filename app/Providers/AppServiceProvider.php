@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 
+use App\Http\Services\Concert\ConcertService;
 use Illuminate\Support\ServiceProvider;
 use Faker\Generator as Faker;
 
@@ -17,6 +18,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('Faker', function ($app) {
             return new Faker();
+        });
+
+        $this->app->bind('ConcertService', function ($app) {
+            return new ConcertService();
         });
     }
 

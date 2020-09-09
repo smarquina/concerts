@@ -83,9 +83,10 @@ class Concert extends BaseModel {
      * @var array
      */
     protected $casts = [
-        'name'         => 'string',
-        'rent_cost'    => 'integer',
-        'ticket_price' => 'integer',
+        'name'           => 'string',
+        'promotor_id'    => 'integer',
+        'recinto_id'     => 'integer',
+        'num_spectators' => 'integer',
     ];
 
     /**
