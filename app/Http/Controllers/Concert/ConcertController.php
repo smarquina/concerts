@@ -11,15 +11,17 @@ namespace App\Http\Controllers\Concert;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Enums\FlashStatus;
 use App\Http\Requests\Concert\ConcertRequest;
 use App\Http\Services\Concert\ConcertService;
 use App\Models\Concert;
+use Illuminate\View\View;
 
 class ConcertController extends Controller {
 
 
     public function index() {
-        return view('welcome');
+        return view('concert');
     }
 
     /**
@@ -40,15 +42,14 @@ class ConcertController extends Controller {
             $service->newConcertStored($concert);
 
             \DB::commit();
-
-            return redirect()->route('')->with('Success', trans('general.reponse.correct'));
+            return redirect()->back()->with(FlashStatus::SUCCESS, trans('general.reponse.correct'));
 
         } catch (\Exception $exception) {
             \DB::rollBack();
             \Log::error($exception->getMessage());
 
             $msg = config('app.debug') ? $exception->getMessage() : trans('general.reponse.error');
-            return redirect()->back()->withInput()->with('Error', $msg);
+            return redirect()->back()->withInput()->with(FlashStatus::WARNING, $msg);
         }
     }
 }

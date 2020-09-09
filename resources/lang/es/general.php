@@ -12,4 +12,4 @@ return [
         'correct' => 'Su petición ha sido correctamente almacenada',
         'error'   => 'Hemos encontrado un error al procesar su petición',
     ],
-]
+];

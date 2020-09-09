@@ -14338,7 +14338,18 @@
      
 }
 
-        namespace Facade\Ignition\Facades { 
+        namespace App\Http\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class FlashStatusFacade {
+         
+    }
+     
+}
+
+    namespace Facade\Ignition\Facades { 
             /**
      * Class Flare.
      *
@@ -18731,6 +18742,7 @@ namespace  {
             class URL extends \Illuminate\Support\Facades\URL {}
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
+            class flashStatus extends \App\Http\Facades\FlashStatusFacade {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
             class Form extends \Collective\Html\FormFacade {}
             class Html extends \Collective\Html\HtmlFacade {}

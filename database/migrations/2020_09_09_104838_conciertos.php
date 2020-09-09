@@ -14,10 +14,10 @@ class Conciertos extends Migration {
         Schema::create('conciertos', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->unique();
-            $table->foreignId('promotor_id')->nullable()->constrained('promotores')->onDelete('cascade');
-            $table->foreignId('recinto_id')->nullable()->constrained('recintos')->onDelete('cascade');
+            $table->foreignId('promotor_id')->constrained('promotores')->onDelete('cascade');
+            $table->foreignId('recinto_id')->constrained('recintos')->onDelete('cascade');
             $table->integer('num_spectators');
-            $table->integer('profitability');
+            $table->integer('profitability')->nullable();
             $table->date('date');
             $table->timestamps();
         });
