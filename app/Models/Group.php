@@ -27,6 +27,7 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Group whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Group whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel comboList()
  */
 class Group extends BaseModel {
 

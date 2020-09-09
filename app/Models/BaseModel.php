@@ -10,6 +10,8 @@
 namespace App\Models;
 
 
+use Illuminate\Database\Query\Builder;
+
 /**
  * App\Models\BaseModel
  *
@@ -17,8 +19,12 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModel newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModel query()
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel comboList()
  */
 class BaseModel extends \Eloquent {
+
+    public $comboIdentifierField = 'name';
+
 
     /**
      * The attributes that should be mutated to dates.
@@ -31,4 +37,14 @@ class BaseModel extends \Eloquent {
         'created_at',
         'updated_at',
     ];
+
+    /**
+     * Normal combo.
+     *
+     * @param Builder $query
+     * @return mixed
+     */
+    public function scopeComboList($query) {
+        return $query->get()->pluck($this->comboIdentifierField, 'id');
+    }
 }

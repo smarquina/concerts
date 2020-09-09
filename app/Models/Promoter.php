@@ -25,6 +25,7 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Promoter whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Promoter whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel comboList()
  */
 class Promoter extends BaseModel {
 

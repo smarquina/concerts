@@ -40,6 +40,7 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Concert wherePromotorId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Concert whereRecintoId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Concert whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel comboList()
  * @mixin \Eloquent
  */
 class Concert extends BaseModel {

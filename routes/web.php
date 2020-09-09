@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Concert\ConcertController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(array('as' => 'concert.', 'namespace' => 'Concert'), function () {
+    Route::get('/', [ConcertController::class, 'index'])->name('index');
+    Route::post('store', [ConcertController::class, 'store'])->name('store');
+
 });

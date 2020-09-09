@@ -25,6 +25,7 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Media whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Media whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel comboList()
  */
 class Media extends BaseModel {
 

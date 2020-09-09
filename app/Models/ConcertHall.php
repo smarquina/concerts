@@ -29,6 +29,7 @@ namespace App\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|ConcertHall whereTicketPrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ConcertHall whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel comboList()
  */
 class ConcertHall extends BaseModel {
 
