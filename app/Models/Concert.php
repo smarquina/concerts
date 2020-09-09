@@ -61,7 +61,6 @@ class Concert extends BaseModel {
         'promotor_id',
         'recinto_id',
         'num_spectators',
-        'profitability',
         'date',
     ];
 
